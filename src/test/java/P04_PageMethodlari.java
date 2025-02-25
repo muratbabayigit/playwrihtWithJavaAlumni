@@ -19,7 +19,9 @@ public class P04_PageMethodlari {
         page.keyboard().press("Enter");
         page.hover("//*[@class='lazy']");
         Thread.sleep(3000);
-        //System.out.println(page.title());
+        page.waitForLoadState();
+        System.out.println(page.title());
+
 
 
         page.close();
