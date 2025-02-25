@@ -5,23 +5,27 @@ import com.microsoft.playwright.Playwright;
 
 import java.awt.*;
 
-public class P02_firsTest {
+public class P04_PageMethodlari {
     public static void main(String[] args) throws InterruptedException {
         Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
-        int width= screenSize.width;
+        int width=screenSize.width;
         int height= screenSize.height;
         Playwright playwright=Playwright.create();
-        Browser browser=playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-        //setHeadless(true): hiç pencere açmadan testi tamamlar
-        //setHeadless(false): browser açarak testi tamamlar
+        Browser browser=playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(10));
         Page page= browser.newPage();
-        page.navigate("https://www.babayigit.net/test");
-        page.setViewportSize(width,height);
-        Thread.sleep(15000);
-        System.out.println(page.title());
+
+        page.navigate("https://www.testotomasyonu.com");
+        page.fill("//*[@class='search-label']","iphone");
+        page.keyboard().press("Enter");
+        page.hover("//*[@class='lazy']");
+        Thread.sleep(3000);
+        //System.out.println(page.title());
+
 
         page.close();
         browser.close();
         playwright.close();
+
+
     }
 }
