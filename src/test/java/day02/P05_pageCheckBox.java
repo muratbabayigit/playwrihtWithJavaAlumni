@@ -1,3 +1,5 @@
+package day02;
+
 import com.microsoft.playwright.*;
 
 import java.awt.*;
