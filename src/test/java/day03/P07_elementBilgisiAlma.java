@@ -26,6 +26,8 @@ public class P07_elementBilgisiAlma {
         page.waitForLoadState();
         page.pdf(new Page.PdfOptions().setPath(Paths.get("C:\\Users\\murat\\OneDrive\\Masaüstü\\play\\P07.pdf")));
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("C:\\Users\\murat\\OneDrive\\Masaüstü\\play\\P07.png")).setFullPage(true));
+        // Video kaydını etkinleştirerek bir context oluşturma
+
 
         page.click(".menu-icon-text");
         System.out.println(page.innerText("#submitlogin"));
