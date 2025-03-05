@@ -20,8 +20,8 @@ public class P18_ScreenShot extends BaseTest {
     page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(dosyaYolu)).setFullPage(true));
     page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(dosyaYolu2)));
 
-   // Locator object=page.locator(".featured-link");
-   // object.screenshot(new Locator.ScreenshotOptions().setPath(Paths.get(dosyaYolu3)));
+    Locator object=page.locator("//*[text()='Wise Quarter']");
+    object.screenshot(new Locator.ScreenshotOptions().setPath(Paths.get(dosyaYolu3)));
 
 }
 }
