@@ -1,11 +1,11 @@
-package day04;
+package day03;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
 
 import java.awt.*;
 
-public class OtherLocators {
+public class P09_OtherLocators {
     public static void main(String[] args) {
 
         Playwright playwright=Playwright.create();

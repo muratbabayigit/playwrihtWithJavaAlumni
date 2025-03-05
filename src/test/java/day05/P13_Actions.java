@@ -4,11 +4,10 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.options.LoadState;
 
 import java.awt.*;
 
-public class Actions {
+public class P13_Actions {
     public static void main(String[] args) throws InterruptedException {
         Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
         int width= screenSize.width;

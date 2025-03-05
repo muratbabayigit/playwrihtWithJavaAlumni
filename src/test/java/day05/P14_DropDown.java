@@ -1,10 +1,11 @@
 package day05;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.SelectOption;
 
 import java.awt.*;
 
-public class Iframe {
+public class P14_DropDown {
     public static void main(String[] args) throws InterruptedException {
         Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
         int width= screenSize.width;
@@ -14,21 +15,21 @@ public class Iframe {
         Browser browser=playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
         Page page= browser.newPage();
         page.setViewportSize(width,height);
+        page.navigate("https://www.ebay.com");
 
-        page.navigate("https://babayigit.net/test/iframe/");
+        Locator selectCategory=page.getByLabel("Select a category for search");
+        Thread.sleep(3000);
 
-        //Iframe içine geçiş yapalım
-        FrameLocator iframe= page.frameLocator("#testIframe");
-        Thread.sleep(2000);
-        iframe.locator("body").clear();
-        Thread.sleep(2000);
-        iframe.locator("body").fill("Ne yaparsan yap AŞK ile yap");
-        Thread.sleep(2000);
+        //selectByValue
+        selectCategory.selectOption("1");
+        Thread.sleep(3000);
 
-        System.out.println(page.locator("h1").innerText());
+        //SelectByLabel
+        selectCategory.selectOption(new SelectOption().setLabel("Travel"));
+        Thread.sleep(3000);
+
 
         page.close();browser.close();playwright.close();
-
 
     }
 }

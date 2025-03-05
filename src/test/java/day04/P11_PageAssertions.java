@@ -9,7 +9,7 @@ import java.awt.*;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class PageAssertions {
+public class P11_PageAssertions {
     public static void main(String[] args) {
         Playwright playwright=Playwright.create();
         Browser browser=playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
